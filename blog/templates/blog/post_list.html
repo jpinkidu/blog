@@ -5,20 +5,12 @@
   </head>
 <body>
   <h1>Welcome!</h1>
-  <div>
-    <p>published: </p>
-    <h3><a href="#">My first post</a>
-      <p>TEXT</p>
-  </div>
-  <div>
-    <p>published: </p>
-    <h3><a href="#">My second post</a>
-      <p>TEXT</p>
-  </div>
-  <div>
-    <p>published: </p>
-    <h3><a href="#">My third post</a>
-      <p>TEXT</p>
-  </div>
+  {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
 </body>
 </html>
